@@ -1,0 +1,11 @@
+{
+  "name": "yallamaksab-web",
+  "compatibility_date": "2026-06-21",
+  // Static-assets-only Worker (no server code). Serves the Vite build in ./dist.
+  // single-page-application = client-side routing fallback so /admin resolves on
+  // a hard refresh (replaces the Pages _redirects file).
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
