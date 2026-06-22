@@ -3,9 +3,9 @@ import { ar } from "../../content/strings";
 // Public repo (maksab is private — its release assets aren't publicly downloadable).
 // Founder attaches the signed APK named yalla-maksab.apk to a release on maksab-link.
 const APK_URL = "https://github.com/sahyoni-tech/maksab-link/releases/latest/download/yalla-maksab.apk";
-// SHA-256 of the signed release APK built 2026-06-21 (preview profile, versionCode 2).
+// SHA-256 of the signed release APK built 2026-06-22 (post-audit fixes; versionCode 2, maksab-link v1.0.1).
 // MUST match the exact yalla-maksab.apk uploaded to the maksab-link release.
-const APK_SHA256 = "10b2fb2a8fe3662212c4acc586ba49e3bbc8324040f1502e889d00542d684d67";
+const APK_SHA256 = "0dbc49a1a6cf5c97117f686dfcda19dcdbcff44fa62a874d0ef1dabb8cdd4ec1";
 
 export function Download() {
   return (
