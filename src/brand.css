@@ -132,11 +132,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero { display: grid; gap: clamp(24px, 5vw, 56px); align-items: center; }
 @media (min-width: 768px) { .hero { grid-template-columns: 1.1fr 0.9fr; } }
 .hero-icon { width: 72px; height: 72px; border-radius: 18px; box-shadow: var(--shadow-md); }
-.hero-brand { font-size: 26px; font-weight: 800; margin-top: 14px; }
-.hero-title { font-size: clamp(30px, 6vw, 48px); margin: 6px 0 12px; }
+.hero-brand { font-size: 26px; font-weight: 800; margin-block-start: 14px; }
+.hero-title { font-size: clamp(30px, 6vw, 48px); margin-block: 6px 12px; }
 .hero-pitch { color: var(--muted); font-size: clamp(16px, 2.6vw, 20px); max-width: 40ch; }
-.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 22px; }
-.hero-note { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-block-start: 22px; }
+.hero-note { color: var(--muted); font-size: 14px; margin-block-start: 12px; }
 .hero-visual { position: relative; display: flex; justify-content: center; }
 .hero-visual::before {
   content: ""; position: absolute; inset: 10% 12%;
@@ -170,7 +170,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .feature-end .feature-visual { order: 2; }
   .feature-end .feature-text { order: 1; }
 }
-.feature-points { display: grid; gap: 16px; margin-top: 18px; }
+.feature-points { display: grid; gap: 16px; margin-block-start: 18px; }
 .feature-points li { display: flex; gap: 12px; align-items: flex-start; }
 .feature-ic {
   flex: none; width: 40px; height: 40px; border-radius: var(--r-sm);
@@ -178,7 +178,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .feature-points strong { font-weight: 700; display: block; }
 .feature-desc { display: block; }
-.feature-text .btn-secondary { margin-top: 22px; }
+.feature-text .btn-secondary { margin-block-start: 22px; }
 
 /* --- How it works --- */
 .how-title { text-align: center; }
@@ -228,5 +228,5 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .site-footer-links { display: flex; gap: 18px; }
 .site-footer-links a { color: var(--muted); text-decoration: none; }
-.site-footer-links a:hover { color: var(--coral); }
+.site-footer-links a:hover { color: var(--fg); }
 .site-footer-rights { font-size: 14px; }
