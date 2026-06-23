@@ -3,8 +3,19 @@ import { render } from "@testing-library/react";
 import { Icon, type IconName } from "./Icon";
 
 const names: IconName[] = [
-  "pin", "heart", "bookmark", "megaphone", "users", "bell",
-  "download", "telegram", "whatsapp", "mail", "check", "tag", "bolt",
+  "pin",
+  "heart",
+  "bookmark",
+  "megaphone",
+  "users",
+  "bell",
+  "download",
+  "telegram",
+  "whatsapp",
+  "mail",
+  "check",
+  "tag",
+  "bolt",
 ];
 
 it.each(names)("renders an svg tagged with the icon name: %s", (name) => {

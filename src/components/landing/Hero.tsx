@@ -14,8 +14,13 @@ export function Hero() {
           <h1 className="hero-title">{ar.tagline}</h1>
           <p className="hero-pitch">{ar.heroPitch}</p>
           <div className="hero-cta">
-            <a className="btn-primary" href="#download">{ar.downloadCta}</a>
-            <span className="chip"><Icon name="check" />{ar.androidChip}</span>
+            <a className="btn-primary" href="#download">
+              {ar.downloadCta}
+            </a>
+            <span className="chip">
+              <Icon name="check" />
+              {ar.androidChip}
+            </span>
           </div>
           <p className="hero-note">{ar.playSoon}</p>
         </div>

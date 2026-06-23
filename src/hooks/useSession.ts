@@ -22,7 +22,10 @@ export function useSession(): SessionState {
 
     const resolveAdmin = async (s: Session | null) => {
       if (!s) {
-        if (active) { setIsAdmin(false); setLoading(false); }
+        if (active) {
+          setIsAdmin(false);
+          setLoading(false);
+        }
         return;
       }
       const { data, error } = await supabase.rpc("is_admin");
@@ -44,7 +47,10 @@ export function useSession(): SessionState {
       resolveAdmin(s);
     });
 
-    return () => { active = false; sub.subscription.unsubscribe(); };
+    return () => {
+      active = false;
+      sub.subscription.unsubscribe();
+    };
   }, []);
 
   // Sign out after 30 min of no interaction. Listeners only bump a timestamp
@@ -52,7 +58,9 @@ export function useSession(): SessionState {
   useEffect(() => {
     if (!session) return;
     let last = Date.now();
-    const bump = () => { last = Date.now(); };
+    const bump = () => {
+      last = Date.now();
+    };
     const events = ["mousemove", "keydown", "click", "scroll", "touchstart"] as const;
     events.forEach((e) => window.addEventListener(e, bump, { passive: true }));
     const id = window.setInterval(() => {

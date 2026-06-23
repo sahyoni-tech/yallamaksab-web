@@ -22,8 +22,15 @@ export async function approveMerchant(client: SupabaseClient, id: string): Promi
   if (error) throw new Error(error.message);
 }
 
-export async function rejectMerchant(client: SupabaseClient, id: string, reason?: string): Promise<void> {
-  const { error } = await client.rpc("reject_merchant", { p_merchant_id: id, p_reason: reason ?? null });
+export async function rejectMerchant(
+  client: SupabaseClient,
+  id: string,
+  reason?: string,
+): Promise<void> {
+  const { error } = await client.rpc("reject_merchant", {
+    p_merchant_id: id,
+    p_reason: reason ?? null,
+  });
   if (error) throw new Error(error.message);
 }
 
@@ -45,7 +52,11 @@ export async function fetchFeedback(client: SupabaseClient): Promise<FeedbackIte
   return (data ?? []) as FeedbackItem[];
 }
 
-export async function resolveFeedback(client: SupabaseClient, id: string, resolved: boolean): Promise<void> {
+export async function resolveFeedback(
+  client: SupabaseClient,
+  id: string,
+  resolved: boolean,
+): Promise<void> {
   const { error } = await client.rpc("admin_resolve_feedback", { p_id: id, p_resolved: resolved });
   if (error) throw new Error(error.message);
 }

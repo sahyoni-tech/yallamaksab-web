@@ -58,7 +58,19 @@ describe("approveMerchant / rejectMerchant", () => {
 describe("fetchFeedback / resolveFeedback", () => {
   it("fetch calls the admin_list_feedback RPC and returns rows", async () => {
     const rpc = vi.fn().mockResolvedValue({
-      data: [{ id: "f1", type: "bug", message: "crash", contact: null, platform: "android", app_version: "1.0.2", merchant_id: null, resolved: false, created_at: "2026-06-23" }],
+      data: [
+        {
+          id: "f1",
+          type: "bug",
+          message: "crash",
+          contact: null,
+          platform: "android",
+          app_version: "1.0.2",
+          merchant_id: null,
+          resolved: false,
+          created_at: "2026-06-23",
+        },
+      ],
       error: null,
     });
     const rows = await fetchFeedback(fakeClient({ rpc }));

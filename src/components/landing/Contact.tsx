@@ -12,12 +12,21 @@ export function Contact() {
         <h2 className="h2">{ar.contactTitle}</h2>
         <div className="contact-channels">
           {TELEGRAM_URL && (
-            <a className="btn-secondary" href={TELEGRAM_URL}><Icon name="telegram" />{ar.contactTelegram}</a>
+            <a className="btn-secondary" href={TELEGRAM_URL}>
+              <Icon name="telegram" />
+              {ar.contactTelegram}
+            </a>
           )}
           {WHATSAPP_URL && (
-            <a className="btn-secondary" href={WHATSAPP_URL}><Icon name="whatsapp" />{ar.contactWhatsapp}</a>
+            <a className="btn-secondary" href={WHATSAPP_URL}>
+              <Icon name="whatsapp" />
+              {ar.contactWhatsapp}
+            </a>
           )}
-          <a className="btn-secondary" href="mailto:hello@yallamaksab.com"><Icon name="mail" />hello@yallamaksab.com</a>
+          <a className="btn-secondary" href="mailto:hello@yallamaksab.com">
+            <Icon name="mail" />
+            hello@yallamaksab.com
+          </a>
         </div>
       </div>
     </section>

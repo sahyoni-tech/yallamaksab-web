@@ -62,7 +62,9 @@ export function LoginForm() {
 
       {!sent ? (
         <>
-          <label style={{ display: "block", color: "var(--muted)", marginBottom: 6 }}>{ar.adminEmailLabel}</label>
+          <label style={{ display: "block", color: "var(--muted)", marginBottom: 6 }}>
+            {ar.adminEmailLabel}
+          </label>
           <input
             type="email"
             value={email}
@@ -70,14 +72,21 @@ export function LoginForm() {
             dir="ltr"
             style={inputStyle}
           />
-          <button className="btn-primary" onClick={send} disabled={busy || !email.trim()} style={{ marginTop: 16, width: "100%" }}>
+          <button
+            className="btn-primary"
+            onClick={send}
+            disabled={busy || !email.trim()}
+            style={{ marginTop: 16, width: "100%" }}
+          >
             {ar.adminSendLink}
           </button>
         </>
       ) : (
         <>
           <p style={{ color: "var(--muted)", marginBottom: 16 }}>{ar.adminLinkSent}</p>
-          <label style={{ display: "block", color: "var(--muted)", marginBottom: 6 }}>{ar.adminCodeLabel}</label>
+          <label style={{ display: "block", color: "var(--muted)", marginBottom: 6 }}>
+            {ar.adminCodeLabel}
+          </label>
           <input
             type="text"
             inputMode="numeric"
@@ -88,7 +97,12 @@ export function LoginForm() {
             dir="ltr"
             style={{ ...inputStyle, letterSpacing: "0.3em", textAlign: "center" }}
           />
-          <button className="btn-primary" onClick={verify} disabled={busy || !code.trim()} style={{ marginTop: 16, width: "100%" }}>
+          <button
+            className="btn-primary"
+            onClick={verify}
+            disabled={busy || !code.trim()}
+            style={{ marginTop: 16, width: "100%" }}
+          >
             {ar.adminVerify}
           </button>
         </>

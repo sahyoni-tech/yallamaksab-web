@@ -27,7 +27,9 @@ export function FeatureRow({ eyebrow, title, points, image, side, cta }: Props) 
           <ul className="feature-points">
             {points.map((p) => (
               <li key={p.text}>
-                <span className="feature-ic"><Icon name={p.icon} /></span>
+                <span className="feature-ic">
+                  <Icon name={p.icon} />
+                </span>
                 <span>
                   <strong>{p.text}</strong>
                   <span className="lead feature-desc">{p.desc}</span>
@@ -35,7 +37,11 @@ export function FeatureRow({ eyebrow, title, points, image, side, cta }: Props) 
               </li>
             ))}
           </ul>
-          {cta && <a className="btn-secondary" href={cta.href}>{cta.label}</a>}
+          {cta && (
+            <a className="btn-secondary" href={cta.href}>
+              {cta.label}
+            </a>
+          )}
         </div>
       </div>
     </section>

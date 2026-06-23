@@ -16,7 +16,9 @@ export function Header() {
           <img src="/icon-192.png" alt="" width={32} height={32} />
           <span>{ar.brand}</span>
         </a>
-        <a className="btn-primary site-header-cta" href="#download">{ar.navDownload}</a>
+        <a className="btn-primary site-header-cta" href="#download">
+          {ar.navDownload}
+        </a>
       </div>
     </header>
   );
