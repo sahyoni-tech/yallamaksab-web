@@ -57,8 +57,10 @@ export const ar = {
   // admin
   adminTitle: "لوحة الإدارة",
   adminEmailLabel: "البريد الإلكتروني",
-  adminSendLink: "أرسل رابط الدخول",
-  adminLinkSent: "تفقّد بريدك — أرسلنا رابط الدخول.",
+  adminSendLink: "أرسل رمز الدخول",
+  adminLinkSent: "تفقّد بريدك — أرسلنا رمز الدخول.",
+  adminCodeLabel: "رمز الدخول",
+  adminVerify: "تأكيد الدخول",
   adminNotAuthorized: "هذا الحساب ليس مخوّلاً للدخول إلى لوحة الإدارة.",
   adminPendingTitle: "متاجر بانتظار الموافقة",
   adminEmpty: "لا توجد متاجر بانتظار الموافقة.",

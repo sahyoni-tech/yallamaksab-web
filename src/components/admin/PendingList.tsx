@@ -36,10 +36,7 @@ export function PendingList() {
 
   return (
     <div className="container" style={{ paddingBlock: 32 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontSize: 24 }}>{ar.adminPendingTitle}</h1>
-        <button className="btn-secondary" onClick={() => supabase.auth.signOut()}>{ar.adminSignOut}</button>
-      </div>
+      <h1 style={{ fontSize: 24 }}>{ar.adminPendingTitle}</h1>
       {error && <p style={{ color: "var(--coral)" }}>{error}</p>}
       {rows.length === 0 && <p style={{ color: "var(--muted)" }}>{ar.adminEmpty}</p>}
       {rows.map((m) => (
