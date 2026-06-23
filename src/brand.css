@@ -127,3 +127,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .site-brand img { border-radius: 8px; }
 .site-header-cta { padding: 10px 18px; font-size: 14px; }
+
+/* --- Hero --- */
+.hero { display: grid; gap: clamp(24px, 5vw, 56px); align-items: center; }
+@media (min-width: 768px) { .hero { grid-template-columns: 1.1fr 0.9fr; } }
+.hero-icon { width: 72px; height: 72px; border-radius: 18px; box-shadow: var(--shadow-md); }
+.hero-brand { font-size: 26px; font-weight: 800; margin-top: 14px; }
+.hero-title { font-size: clamp(30px, 6vw, 48px); margin: 6px 0 12px; }
+.hero-pitch { color: var(--muted); font-size: clamp(16px, 2.6vw, 20px); max-width: 40ch; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 22px; }
+.hero-note { color: var(--muted); font-size: 14px; margin-top: 12px; }
+.hero-visual { position: relative; display: flex; justify-content: center; }
+.hero-visual::before {
+  content: ""; position: absolute; inset: 10% 12%;
+  background: radial-gradient(closest-side, rgba(196,76,36,.22), transparent);
+  filter: blur(22px); z-index: 0;
+}
+.hero-visual .phone { position: relative; z-index: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-visual .phone { animation: float 6s ease-in-out infinite; }
+}

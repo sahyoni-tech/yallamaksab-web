@@ -1,26 +1,28 @@
 import { ar } from "../../content/strings";
+import { Icon } from "./Icon";
+import { PhoneMockup } from "./PhoneMockup";
+import { useReveal } from "../../hooks/useReveal";
 
 export function Hero() {
+  const ref = useReveal<HTMLDivElement>();
   return (
-    <header className="container" style={{ textAlign: "center", paddingBlock: 56 }}>
-      {/* App icon as a rounded tile (the brand mark is dark-paneled by design —
-          a rounded tile + shadow reads as "the app", not a clipped square on cream).
-          Brand name renders as text below in Tajawal (loaded in index.html). */}
-      <img
-        src="/icon-192.png"
-        alt={ar.brand}
-        width={80}
-        height={80}
-        style={{ borderRadius: 20, boxShadow: "0 6px 20px rgba(0,0,0,0.12)" }}
-      />
-      <div style={{ fontSize: 30, fontWeight: 700, marginTop: 16 }}>{ar.brand}</div>
-      <h1 style={{ fontSize: 34, margin: "8px 0 8px" }}>{ar.tagline}</h1>
-      <p style={{ color: "var(--muted)", fontSize: 18, maxWidth: 560, marginInline: "auto" }}>
-        {ar.heroPitch}
-      </p>
-      <a href="#download" className="btn-primary" style={{ marginTop: 24 }}>
-        {ar.downloadCta}
-      </a>
-    </header>
+    <section id="top" className="section">
+      <div ref={ref} className="container hero reveal">
+        <div className="hero-text">
+          <img className="hero-icon" src="/icon-192.png" alt={ar.brand} width={72} height={72} />
+          <div className="hero-brand">{ar.brand}</div>
+          <h1 className="hero-title">{ar.tagline}</h1>
+          <p className="hero-pitch">{ar.heroPitch}</p>
+          <div className="hero-cta">
+            <a className="btn-primary" href="#download">{ar.downloadCta}</a>
+            <span className="chip"><Icon name="check" />{ar.androidChip}</span>
+          </div>
+          <p className="hero-note">{ar.playSoon}</p>
+        </div>
+        <div className="hero-visual">
+          <PhoneMockup src="/screens/hero.png" alt={ar.heroShot} />
+        </div>
+      </div>
+    </section>
   );
 }
