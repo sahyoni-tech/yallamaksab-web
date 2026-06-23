@@ -15,7 +15,7 @@ export function Download() {
         <h2 className="h2">{ar.downloadTitle}</h2>
         <p className="lead">{ar.androidNote}</p>
         <div className="download-actions">
-          <a className="btn-primary" href={APK_URL}><Icon name="download" />{ar.downloadCta}</a>
+          <a className="btn-primary" href={APK_URL} download><Icon name="download" />{ar.downloadCta}</a>
           <div className="download-qr">
             <img src="/qr-download.png" alt={ar.qrHint} width={120} height={120} />
             <span>{ar.qrHint}</span>
