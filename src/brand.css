@@ -182,7 +182,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* --- How it works --- */
 .how-title { text-align: center; }
-.how-steps { display: grid; gap: 20px; margin-top: 28px; }
+.how-steps { display: grid; gap: 20px; margin-block-start: 28px; }
 @media (min-width: 768px) { .how-steps { grid-template-columns: repeat(3, 1fr); } }
 .how-step {
   background: var(--card); border: 1px solid var(--border);
@@ -194,4 +194,4 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: 999px; background: var(--coral); color: var(--on-coral);
   font-weight: 800; font-size: 18px;
 }
-.how-step-title { font-size: 18px; margin: 12px 0 6px; }
+.how-step-title { font-size: 18px; margin-block: 12px 6px; }
