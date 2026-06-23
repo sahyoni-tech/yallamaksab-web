@@ -212,3 +212,21 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .checksum { margin-block-start: 18px; font-size: 13px; color: #C9C4BA; }
 .checksum summary { cursor: pointer; }
 .checksum code { display: block; margin-block-start: 8px; word-break: break-all; }
+
+/* --- Contact --- */
+.contact { text-align: center; }
+.contact-channels {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  justify-content: center; margin-block-start: 16px;
+}
+
+/* --- Footer --- */
+.site-footer { border-top: 1px solid var(--border); padding-block: 28px; color: var(--muted); }
+.site-footer-row {
+  display: flex; flex-wrap: wrap; gap: 14px 24px;
+  align-items: center; justify-content: space-between;
+}
+.site-footer-links { display: flex; gap: 18px; }
+.site-footer-links a { color: var(--muted); text-decoration: none; }
+.site-footer-links a:hover { color: var(--coral); }
+.site-footer-rights { font-size: 14px; }
