@@ -147,3 +147,15 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-visual .phone { animation: float 6s ease-in-out infinite; }
 }
+
+/* --- Value strip --- */
+.value-strip {
+  display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+  padding-block: 4px clamp(8px, 4vw, 24px);
+}
+.value-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 999px; padding: 10px 18px; font-weight: 600;
+}
+.value-chip svg { width: 18px; height: 18px; color: var(--coral); }
