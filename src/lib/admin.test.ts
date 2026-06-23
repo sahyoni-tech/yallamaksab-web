@@ -1,5 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import { fetchPendingMerchants, approveMerchant, rejectMerchant } from "./admin";
+import { fetchFeedback, resolveFeedback } from "./admin";
 
 // A minimal fake of the supabase client shaped to what admin.ts calls.
 function fakeClient(over: Record<string, unknown> = {}) {
@@ -51,5 +52,29 @@ describe("approveMerchant / rejectMerchant", () => {
   it("throws on an RPC error", async () => {
     const rpc = vi.fn().mockResolvedValue({ error: { message: "denied" } });
     await expect(approveMerchant(fakeClient({ rpc }), "m1")).rejects.toThrow("denied");
+  });
+});
+
+describe("fetchFeedback / resolveFeedback", () => {
+  it("fetch calls the admin_list_feedback RPC and returns rows", async () => {
+    const rpc = vi.fn().mockResolvedValue({
+      data: [{ id: "f1", type: "bug", message: "crash", contact: null, platform: "android", app_version: "1.0.2", merchant_id: null, resolved: false, created_at: "2026-06-23" }],
+      error: null,
+    });
+    const rows = await fetchFeedback(fakeClient({ rpc }));
+    expect(rpc).toHaveBeenCalledWith("admin_list_feedback");
+    expect(rows).toHaveLength(1);
+    expect(rows[0].message).toBe("crash");
+  });
+
+  it("resolve calls the admin_resolve_feedback RPC with id + flag", async () => {
+    const rpc = vi.fn().mockResolvedValue({ error: null });
+    await resolveFeedback(fakeClient({ rpc }), "f1", true);
+    expect(rpc).toHaveBeenCalledWith("admin_resolve_feedback", { p_id: "f1", p_resolved: true });
+  });
+
+  it("fetch throws on an RPC error", async () => {
+    const rpc = vi.fn().mockResolvedValue({ data: null, error: { message: "denied" } });
+    await expect(fetchFeedback(fakeClient({ rpc }))).rejects.toThrow("denied");
   });
 });

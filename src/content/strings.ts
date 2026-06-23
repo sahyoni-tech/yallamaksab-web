@@ -37,4 +37,11 @@ export const ar = {
   adminReject: "رفض",
   adminSignOut: "تسجيل الخروج",
   adminError: "حدث خطأ، حاول مرة أخرى.",
+  adminFeedbackTab: "الملاحظات",
+  adminPendingTab: "المتاجر",
+  adminFeedbackTitle: "ملاحظات المستخدمين",
+  adminFeedbackEmpty: "لا توجد ملاحظات.",
+  adminFeedbackResolve: "تمّت المعالجة",
+  adminFeedbackReopen: "إعادة فتح",
+  adminFeedbackResolved: "معالَجة",
 } as const;

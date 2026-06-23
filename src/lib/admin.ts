@@ -26,3 +26,26 @@ export async function rejectMerchant(client: SupabaseClient, id: string, reason?
   const { error } = await client.rpc("reject_merchant", { p_merchant_id: id, p_reason: reason ?? null });
   if (error) throw new Error(error.message);
 }
+
+export type FeedbackItem = {
+  id: string;
+  type: "bug" | "idea" | "feedback" | "help";
+  message: string;
+  contact: string | null;
+  platform: string | null;
+  app_version: string | null;
+  merchant_id: string | null;
+  resolved: boolean;
+  created_at: string;
+};
+
+export async function fetchFeedback(client: SupabaseClient): Promise<FeedbackItem[]> {
+  const { data, error } = await client.rpc("admin_list_feedback");
+  if (error) throw new Error(error.message);
+  return (data ?? []) as FeedbackItem[];
+}
+
+export async function resolveFeedback(client: SupabaseClient, id: string, resolved: boolean): Promise<void> {
+  const { error } = await client.rpc("admin_resolve_feedback", { p_id: id, p_resolved: resolved });
+  if (error) throw new Error(error.message);
+}
