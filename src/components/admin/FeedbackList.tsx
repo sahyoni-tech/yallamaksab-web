@@ -8,14 +8,11 @@ export function FeedbackList() {
   const [error, setError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  const load = async () => {
-    try {
-      setRows(await fetchFeedback(supabase));
-    } catch {
-      setError(ar.adminError);
-    }
-  };
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    fetchFeedback(supabase)
+      .then(setRows)
+      .catch(() => setError(ar.adminError));
+  }, []);
 
   const toggle = async (item: FeedbackItem) => {
     setBusyId(item.id);

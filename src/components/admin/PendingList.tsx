@@ -13,14 +13,11 @@ export function PendingList() {
   const [error, setError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
 
-  const load = async () => {
-    try {
-      setRows(await fetchPendingMerchants(supabase));
-    } catch {
-      setError(ar.adminError);
-    }
-  };
-  useEffect(() => { load(); }, []);
+  useEffect(() => {
+    fetchPendingMerchants(supabase)
+      .then(setRows)
+      .catch(() => setError(ar.adminError));
+  }, []);
 
   const act = async (id: string, fn: (id: string) => Promise<void>) => {
     setBusyId(id);
