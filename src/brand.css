@@ -179,3 +179,19 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .feature-points strong { font-weight: 700; display: block; }
 .feature-desc { display: block; }
 .feature-text .btn-secondary { margin-top: 22px; }
+
+/* --- How it works --- */
+.how-title { text-align: center; }
+.how-steps { display: grid; gap: 20px; margin-top: 28px; }
+@media (min-width: 768px) { .how-steps { grid-template-columns: repeat(3, 1fr); } }
+.how-step {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r-md); padding: 24px; text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+.how-num {
+  display: inline-grid; place-items: center; width: 44px; height: 44px;
+  border-radius: 999px; background: var(--coral); color: var(--on-coral);
+  font-weight: 800; font-size: 18px;
+}
+.how-step-title { font-size: 18px; margin: 12px 0 6px; }
