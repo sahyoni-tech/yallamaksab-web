@@ -1,12 +1,22 @@
 import { ar } from "../../content/strings";
+import { FeatureRow } from "./FeatureRow";
+import { type IconName } from "./Icon";
+
+const icons: IconName[] = ["pin", "heart", "bookmark"];
 
 export function ForShoppers() {
+  const points = ar.shoppersPoints.map((text, i) => ({
+    icon: icons[i],
+    text,
+    desc: ar.shoppersDesc[i],
+  }));
   return (
-    <section className="container" style={{ paddingBlock: 32 }}>
-      <h2 style={{ fontSize: 24 }}>{ar.shoppersTitle}</h2>
-      <ul style={{ color: "var(--muted)", fontSize: 17 }}>
-        {ar.shoppersPoints.map((p) => <li key={p}>{p}</li>)}
-      </ul>
-    </section>
+    <FeatureRow
+      eyebrow={ar.shoppersTitle}
+      title={ar.shoppersHeadline}
+      points={points}
+      image={{ src: "/screens/shoppers.png", alt: ar.shoppersShot }}
+      side="start"
+    />
   );
 }

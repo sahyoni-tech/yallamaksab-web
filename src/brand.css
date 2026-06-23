@@ -159,3 +159,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: 999px; padding: 10px 18px; font-weight: 600;
 }
 .value-chip svg { width: 18px; height: 18px; color: var(--coral); }
+
+/* --- Feature row --- */
+.feature { display: grid; gap: clamp(24px, 5vw, 56px); align-items: center; }
+.feature-visual { display: flex; justify-content: center; }
+@media (min-width: 768px) {
+  .feature { grid-template-columns: 0.9fr 1.1fr; }
+  .feature-start .feature-visual { order: 1; }
+  .feature-start .feature-text { order: 2; }
+  .feature-end .feature-visual { order: 2; }
+  .feature-end .feature-text { order: 1; }
+}
+.feature-points { display: grid; gap: 16px; margin-top: 18px; }
+.feature-points li { display: flex; gap: 12px; align-items: flex-start; }
+.feature-ic {
+  flex: none; width: 40px; height: 40px; border-radius: var(--r-sm);
+  display: grid; place-items: center; background: var(--tint); color: var(--coral);
+}
+.feature-points strong { font-weight: 700; display: block; }
+.feature-desc { display: block; }
+.feature-text .btn-secondary { margin-top: 22px; }

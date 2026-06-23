@@ -1,13 +1,23 @@
 import { ar } from "../../content/strings";
+import { FeatureRow } from "./FeatureRow";
+import { type IconName } from "./Icon";
+
+const icons: IconName[] = ["megaphone", "users", "bell"];
 
 export function ForShops() {
+  const points = ar.shopsPoints.map((text, i) => ({
+    icon: icons[i],
+    text,
+    desc: ar.shopsDesc[i],
+  }));
   return (
-    <section className="container" style={{ paddingBlock: 32 }}>
-      <h2 style={{ fontSize: 24 }}>{ar.shopsTitle}</h2>
-      <ul style={{ color: "var(--muted)", fontSize: 17 }}>
-        {ar.shopsPoints.map((p) => <li key={p}>{p}</li>)}
-      </ul>
-      <a href="#download" className="btn-secondary">{ar.shopsCta}</a>
-    </section>
+    <FeatureRow
+      eyebrow={ar.shopsTitle}
+      title={ar.shopsHeadline}
+      points={points}
+      image={{ src: "/screens/shops.png", alt: ar.shopsShot }}
+      side="end"
+      cta={{ href: "#download", label: ar.shopsCta }}
+    />
   );
 }
